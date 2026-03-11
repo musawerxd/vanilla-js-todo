@@ -31,6 +31,7 @@ A **feature-rich Todo application** built with **vanilla JavaScript, HTML, and C
 
 ```txt
 vanilla-js-todo/
+├── images
 ├── index.html
 ├── style.css
 ├── script.js
@@ -44,11 +45,11 @@ vanilla-js-todo/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/vanilla-js-todo.git
+git clone https://github.com/musawerxd/vanilla-js-todo.git
 ```
 
 2. Open `index.html` in your browser.
-   *No server required — fully client-side.*
+   *No server required  fully client-side.*
 
 ---
 
