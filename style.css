@@ -14,14 +14,16 @@
 }
 
 .light {
-    --bg: #fdfdfd;
-    --card-bg: #ffffff;
-    --text: #222222;
-    --secondary-text: #555555;
-    --border: #ddd;
-    --done: #28a745;
-    --btn-bg: #007bff;
-    --btn-hover: #0056b3;
+    --bg: #f5efe6;
+    --card-bg: #fff9f0;
+    --text: #2d2a26;
+    --secondary-text: #7a746c;
+    --border: #e8dfd3;
+    --done: #7fb77e;
+    --btn-bg: #e18a34;
+    --btn-text: #2d2a26;
+    --btn-hover: #d27416;
+    --accent: #e18a34;
 }
 
 /* ===========================
