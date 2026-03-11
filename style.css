@@ -294,6 +294,24 @@ nav {
     border-color: var(--done);
 }
 
+.edit,
+.delete {
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.edit:hover {
+    border-color: var(--done) !important;
+    color: var(--done) !important;
+
+}
+
+.delete:hover {
+    border-color: red !important;
+    color: red !important;
+}
+
 /* ===========================
    TASK ACTION BUTTONS (edit/delete)
    =========================== */
