@@ -65,6 +65,11 @@ nav {
     height: 40px;
 }
 
+.navRight {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
 
 #musawerxd {
     display: flex;
@@ -90,8 +95,8 @@ nav {
 }
 
 #theme {
-    background: var(--card-bg);
-    color: var(--text);
+    background: var(--btn-bg);
+    color: white;
     border: none;
     padding: 6px 12px;
     border-radius: 8px;
@@ -149,8 +154,7 @@ nav {
     color: var(--text);
     outline: none;
     font-size: 14px;
-    min-width: 0;
-    /* prevents overflow in flex */
+    min-width: 0; /* prevents overflow in flex */
 }
 
 #taskInput::placeholder {
@@ -170,8 +174,7 @@ nav {
     background: var(--btn-bg);
     color: white;
     cursor: pointer;
-    white-space: nowrap;
-    /* prevents button text from wrapping */
+    white-space: nowrap; /* prevents button text from wrapping */
 }
 
 #Addbtn:hover {
@@ -213,9 +216,28 @@ nav {
 
 .allTask {
     list-style: none;
-    flex: 1;
     overflow-y: auto;
-    max-height: 55vh;
+    height: 50vh;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.allTask::-webkit-scrollbar {
+    width: 5px;
+}
+
+.allTask::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.allTask::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 100px;
+}
+
+.allTask::-webkit-scrollbar-thumb:hover {
+    background: var(--btn-bg);
 }
 
 .empty {
@@ -248,8 +270,7 @@ nav {
     align-items: center;
     gap: 10px;
     flex: 1;
-    min-width: 0;
-    /* prevents text overflow */
+    min-width: 0; /* prevents text overflow */
 }
 
 .tasktxt {
@@ -264,8 +285,7 @@ nav {
 .markbtn {
     height: 22px;
     width: 22px;
-    min-width: 22px;
-    /* prevents it from shrinking */
+    min-width: 22px; /* prevents it from shrinking */
     border-radius: 50%;
     border: 2px solid var(--border);
     color: var(--done);
@@ -294,24 +314,6 @@ nav {
     border-color: var(--done);
 }
 
-.edit,
-.delete {
-    border: 1px solid var(--border) !important;
-    border-radius: 6px;
-    padding: 4px;
-}
-
-.edit:hover {
-    border-color: var(--done) !important;
-    color: var(--done) !important;
-
-}
-
-.delete:hover {
-    border-color: red !important;
-    color: red !important;
-}
-
 /* ===========================
    TASK ACTION BUTTONS (edit/delete)
    =========================== */
@@ -333,6 +335,21 @@ nav {
 
 .task:hover .taskRight button {
     opacity: 1;
+}
+
+.edit,
+.delete {
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.edit:hover {
+    border-color: var(--done) !important;
+}
+
+.delete:hover {
+    border-color: red !important;
 }
 
 /* ===========================
@@ -357,6 +374,7 @@ nav {
     border-top: 1px solid var(--border);
     font-size: 13px;
     color: var(--secondary-text);
+    flex-shrink: 0; /* never squish or disappear */
 }
 
 #clearBtn {
@@ -384,7 +402,6 @@ nav {
         opacity: 0;
         transform: translateY(-6px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -452,9 +469,9 @@ nav {
         opacity: 1;
     }
 
-    /* TASK LIST — limit height so page doesn't grow forever */
+    /* TASK LIST */
     .allTask {
-        max-height: 45vh;
+        height: 40vh;
     }
 
     /* STATS */
