@@ -26,7 +26,8 @@ themeBtn.addEventListener("click", () => {
 
 
 // references 
-let taskArr = [];
+// let taskArr = [];
+let taskArr = JSON.parse(localStorage.getItem("tasks")) || [];
 let currentFilter = "all";
 
 const taskInput = document.getElementById("taskInput");
@@ -90,6 +91,11 @@ function render() {
 
 
 
+//save task
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(taskArr))
+}
+
 
 
 //Add task
@@ -110,7 +116,7 @@ function addTask() {
     })
     taskInput.value = ""
     taskInput.focus()
-
+    saveTasks()
     render();
 }
 
@@ -130,6 +136,7 @@ function editTask(id) {
 
     if (newTask !== null && newTask.trim() !== "") {
         task.text = newTask.trim();
+        saveTasks();
         render()
     }
 }
@@ -148,6 +155,7 @@ function removeTask(id) {
     li.classList.add("removing")
     setTimeout(() => {
         taskArr = taskArr.filter((task) => task.id !== id)
+        saveTasks();
         render()
     }, 300);
 }
@@ -164,6 +172,7 @@ function clearTasks() {
         currentFilter = "all"
         filterBtns.forEach((btn) => btn.classList.remove("active"))
         document.querySelector(`.filterbtn[data-filter="all"]`).classList.add("active");
+        saveTasks();
         render();
     }
 }
@@ -178,6 +187,7 @@ function toggleDone(id) {
     if (!task) return;
 
     task.done = !task.done;
+    saveTasks();
     render()
 }
 
@@ -250,3 +260,6 @@ taskList.addEventListener("click", (event) => {
 clearBtn.addEventListener("click", () => {
     clearTasks()
 })
+
+
+render(); // to load automatically 
