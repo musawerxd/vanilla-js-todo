@@ -1,6 +1,5 @@
-// ========================
+
 // Navbar
-// ========================
 
 document
     .getElementById("musawerxd")
@@ -10,9 +9,7 @@ document
 
 
 
-// ========================
 // Theme Toggle
-// ========================
 
 const themeBtn = document.getElementById("theme");
 
