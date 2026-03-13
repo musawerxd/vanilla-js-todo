@@ -62,3 +62,4 @@ git clone https://github.com/musawerxd/vanilla-js-todo.git
 * UX enhancements: animations, keyboard shortcuts, theme toggle
 
 
+## Made with chai☕ and curiosity
